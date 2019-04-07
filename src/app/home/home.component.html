@@ -1,0 +1,115 @@
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/welcome.jpg')">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                   
+                    <h1 class="presentation-title">Welcome to Landmarks</h1>
+                    <div class="fog-low">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                    <div class="fog-low right">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+        <h6 class=" category-absolute ml-auto mr-auto">Designed and coded by Sfalagkiaris Christos
+        </h6>
+    </div>
+    <div class="main">
+        
+            <div class="section text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h2 class="title">Explore Landmarks</h2>
+                        <h5 class="description">The World is a book and those who do not travel read only a page.</h5>
+                        <br>
+                        <a *ngIf="!userIsAuthenticated" [routerLink]="['/auth/login']" class="btn btn-danger btn-round">Login</a>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-album-2"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Beautiful Places</h4>
+                                <p class="description">Spend your time exploring new places and photos from users all over the world.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-bulb-63"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">New Ideas</h4>
+                                <p>Get ideas on new travels and new experiences from others users stories.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-circle-10"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Sharing</h4>
+                                <p>Share your own experiences and landmarks with other users.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info">
+                            <div class="icon icon-danger">
+                                <i class="nc-icon nc-sun-fog-29"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Discovering</h4>
+                                <p>The real voyage of discovery consists not in seeking new landscapes but in having new eyes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+            
+        <div class="section section-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Landmarks from our users</h2>
+
+                        <ngb-carousel *ngIf="posts.length > 0 && !isLoading"
+                             >
+                                <ng-template ngbSlide *ngFor="let post of posts">
+                                  <img  [src]="post.imagePath"
+                                  class="post-image-title pull-left"
+                                  [alt]="post.title">
+                                  <div class="carousel-caption">
+                                        <h3>{{post.title}}</h3>
+                                      </div>
+                                </ng-template>
+                              </ngb-carousel>
+                              <br/>
+                              <a [routerLink]="['/posts']" class="btn btn-danger btn-round">Explore more</a>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+       
+       
+    </div>
+</div>

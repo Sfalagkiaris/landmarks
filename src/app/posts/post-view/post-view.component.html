@@ -1,0 +1,72 @@
+<div class="page-header page-header-xs" data-parallax="true"
+[ngStyle]="{ 'background-image': 'url(' + post.imagePath + ')'}">
+  <div class="filter"></div>
+  
+</div>
+<div class="main">
+  <div class="section text-center">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 mr-auto ml-auto">
+              <h2 class="title">{{post.title}}</h2>
+              <br>
+              <div class="post-image">
+                  <img [src]="post.imagePath" [alt]="post.title">
+              </div>
+              <br>
+              <button mat-button color="warn" (click)="openFullSize()">View in full size</button>
+          </div>
+      </div>
+      <br/>
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Short Info">
+                            <ng-template ngbTabContent >
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <h5 class="description">{{post.short_info}}</h5>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Description">
+                            <ng-template ngbTabContent>
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <h5 class="description">{{post.description}}</h5>
+                                    </li>
+                                </ul>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mr-auto ml-auto pull-right">
+                    <div class="col-md-6 mr-auto ml-auto pull-right">
+                    <label *ngIf="post.created_at" class="title">Created at: {{post.created_at | date :'short'}}</label>
+                    </div>
+                    <div class="col-md-6 mr-auto ml-auto pull-right">
+                    <label *ngIf="post.updated_at" class="title">Last Modified at: {{post.updated_at | date :'short'}}</label>
+                  </div>
+                    <br>
+                    
+              </div>
+            </div>
+      <br/><br/>
+      <div class="row">
+          <div class="col-md-12 mr-auto ml-auto pull-right">
+      <a [routerLink]="['/posts']" class="btn btn-danger btn-round">Back</a>
+      <button *ngIf="post.url" type="button" class="btn btn-danger btn-round" (click)="visitUrl()"><i class="fa fa-globe"></i>Landmarks Site</button>
+      </div>
+  </div>
+</div>
+
+
+ 
+</div>

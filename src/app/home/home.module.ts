@@ -1,0 +1,22 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+
+import { HomeComponent } from './home.component';
+
+@NgModule({
+    imports: [
+        CommonModule,
+        NgbCarouselModule,
+        BrowserModule,
+        FormsModule,
+        RouterModule
+    ],
+    declarations: [ HomeComponent ],
+    exports:[ HomeComponent ],
+    providers: []
+})
+export class HomeModule { }

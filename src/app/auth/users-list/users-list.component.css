@@ -1,0 +1,42 @@
+
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
+
+.link {
+  color:blue;
+  cursor: pointer;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.col-md-4 {
+  padding-left: 0px;
+}
+
+.post-list{
+  margin-bottom: 6px;
+  padding: 4px;
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.post-image-title {
+  height: 250px;
+  width: 250px;
+}

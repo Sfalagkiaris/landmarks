@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div
+    class="page-header page-header-xs"
+    data-parallax="true"
+    style="background-image: url('./assets/img/earth.jpg');"
+  >
+    <div class="filter"></div>
+  </div>
+  <div class="main">
+    <div class="section">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-md-12 text-center">
+          <h2 class="title">Users Overview</h2>
+          </div>
+          </div>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+        <div class="row text-center">
+            <div class="col-md-12 text-center">
+            <div *ngIf="users.length > 0 && !isLoading">
+            <mat-list>
+                <mat-list-item *ngFor="let user of users">
+                  <h3 matLine> {{ user.username }} </h3><h3 matLine> {{ user.email }}</h3>
+                </mat-list-item>
+              </mat-list>
+
+              <mat-paginator
+            [length]="totalPosts"
+            [pageSize]="postsPerPage"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="onChangedPage($event)"
+            *ngIf="users.length > 0"
+          ></mat-paginator>
+            </div>
+        </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
